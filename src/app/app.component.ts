@@ -48,8 +48,11 @@ export class AppComponent {
     */
 
   }
-  login(){
+  loginGoogle(){
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res => console.log(res));
+  }
+  loginTwitter(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then(res => console.log(res));
   }
   signOut() {
     this.afAuth.auth.signOut();
