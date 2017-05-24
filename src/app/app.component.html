@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<span>{{user_displayName}} </span>
+<span> {{user_mail}}</span>
+<img [src]="user_avatar" [alt]="user_displayName">
+
+<div>
+  <label for="">Google Sing in: </label>
+  <button (click)="login()">Sing in Google</button>
+</div>
+<button (click)="signOut()">Leave :'( </button>
