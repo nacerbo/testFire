@@ -27,6 +27,7 @@ export class AppComponent {
   user_avatar;
   user_mail;
   constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase){
+
     this.user = afAuth.authState;
     this.user.subscribe(user => {
         if (!user) {
@@ -54,6 +55,10 @@ export class AppComponent {
   loginTwitter(){
     this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then(res => console.log(res));
   }
+  loginFacebook(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(res => console.log(res));
+  }
+
   signOut() {
     this.afAuth.auth.signOut();
     this.user_avatar = null;
